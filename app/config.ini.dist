@@ -1,0 +1,7 @@
+; Fichier de configuration ou on va avoir nos acces pour se connecter à la Base de données
+; Recopier ce fichier et le nommer "config.ini"
+; Puis y mettre ses bons identifiants pour se connecter à la bdd
+DB_HOST=localhost
+DB_NAME=nom_bdd
+DB_USERNAME=username_bdd
+DB_PASSWORD=password_bdd

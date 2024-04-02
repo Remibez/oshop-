@@ -1,0 +1,1 @@
+<h1>Type numéro <?= $viewData['typeId']; ?></h1>
