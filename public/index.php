@@ -37,7 +37,7 @@ $router->map('GET', '/types/[i:id]', [
 ], 'type');
 $router->map('GET', '/marques/[i:id]', [
     'controller' => CatalogController::class,
-    'method' => 'marque'
+    'method' => 'brand'
 ], 'marque');
 $router->map('GET', '/produit/[i:id]', [
     'controller' => CatalogController::class,

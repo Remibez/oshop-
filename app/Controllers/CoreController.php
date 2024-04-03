@@ -24,7 +24,21 @@ class CoreController
 
         // Maintenant je vais executer la méthode findAll du model pour récupérer et stocker TOUTES les catégories
         $categories = $categoryModel->findAll();
-        // dump($categories);
+        //dump($categories);
+
+        // Ici je vais récupérer toutes les catégories qui sont dans ma bdd
+        // Car je vais en avoir besoin pour les afficher dans mon header (liste déroulantes catégories)
+        // Ci dessous je créer une instance du model Category
+        $brandModel = new Brand();
+
+        // Maintenant je vais executer la méthode findAll du model pour récupérer et stocker TOUTES les catégories
+        $brands = $brandModel->findAll();
+        // dump($brands);
+
+        
+        $typesModel = new Type();
+
+        $types = $typesModel->findAll();
 
         // Ici je vais rendre "global" mon objet $router (instance de AltoRouter de l'index.php)
         global $router;

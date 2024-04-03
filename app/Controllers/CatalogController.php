@@ -12,36 +12,52 @@ use App\Models\Type;
 class CatalogController extends CoreController
 {
     public function category(array $params)
-    {
-        $id = (int)$params["id"];
+{
+    $id = (int)$params["id"];
+    $categoryModel = new Category();
 
-        // Maintenant qu'on a l'id, on va pouvoir l'utiliser pour rechercher la bonne catégorie en BDD.
-
-        $this->show("products_list", ['id' => $id]);
-    }
-
+    // Récupérer la catégorie correspondant à l'ID
+    $category = $categoryModel->find($id);
+    // dump($category);
+    // Afficher la vue en passant les données de la catégorie
+    $this->show("products_list", [
+        
+        'category' => $category,
+    ]);
+}
     public function type(array $params)
     {
-        $id = (int)$params["id"];
 
+        $id = (int)$params["id"];
+        
+        $typeModel = new Type();
+
+        
+        $type = $typeModel->find($id);
         // Maintenant qu'on a l'id, on va pouvoir l'utiliser pour rechercher la bonne catégorie en BDD.
 
+        dump($type);
         $this->show("type", ['typeId' => $id]);
     }
 
-    public function marque(array $params)
+    public function brand(array $params)
     {
         $id = (int)$params["id"];
+        $brandModel = new Brand();
 
+        
+        $brands = $brandModel->find($id);
         // Maintenant qu'on a l'id, on va pouvoir l'utiliser pour rechercher la bonne catégorie en BDD.
 
-        $this->show("marque", ['marqueId' => $id]);
+        $this->show("brand", ['brandId' => $id]);
     }
 
     public function produit(array $params)
     {
         $id = (int)$params["id"];
-
+        $productModel = new Product();
+        $product = $productModel->find($id);
+        $this->show("product_list", ['product' => $product]);
         // Maintenant qu'on a l'id, on va pouvoir l'utiliser pour rechercher la bonne catégorie en BDD.
 
         $this->show("produit", ['produitId' => $id]);
